@@ -1,33 +1,34 @@
 // The World Today — 25 November 2026 in one image
-// (make.fun news-image-20261125 entry, v1).
+// (make.fun news-image-20261125 entry, v2).
 //
 // Wednesday 25 November 2026's world news, drawn as a single
-// broadsheet front page: the hero is the Nvidia reversal — Jensen
-// Huang's comeback fading fast, shares down 7.5% to $152.76 on
-// Tuesday's close, 18% below the 6 November close, with lawmakers
-// probing Trump's role in reinstating the CEO and Huang due to
-// testify before the Senate Banking Committee on 3 December (Nikkei
-// -2.8% as the AI-doubt mood spread); four supporting stories (the
-// Iran war widening as a Houthi drone hits a tower in Riyadh's
-// financial district, 11 hurt; a Brooklyn jury finds Huawei guilty
-// on 10 of 12 counts — bank fraud, sanctions breaches over Iran,
-// trade-secret theft; Britain sanctions five senior Myanmar generals
-// after the ICJ's genocide ruling of 19 November; the war spreading
-// beyond Europe as two Libyan soldiers die of wounds after the
-// strike on a Russian ship Kyiv claims), and an "ALSO TODAY" ticker
-// with six more (first Pakistani astronaut docks at China's Tiangong
-// station; some 20 hostages held in a Cartagena supermarket and a
-// car bomb injuring 23; U.S. readies new tariffs on 16 trading
-// partners; Senegal keep their AFCON title after a CAS ruling; COP31
-// fallout after the Antalya collapse; oil down 21% across November).
-// Sources: Reuters, BBC, Barron's, WSJ, The Guardian, DOJ.
+// broadsheet front page with 35 dated stories across 9 regions:
+// three heroes — leaked Rosstat data putting Russian military
+// deaths at 490,334 (Feb 2022–Sep 2026, via BBC Russian /
+// Mediazona); the 100th Macy's Thanksgiving Parade POSTPONED to
+// Saturday 28 Nov, the first postponement in 100 years, as a
+// nor'easter brings gusts up to 65 mph and New Jersey declares
+// an emergency in 21 counties; Nvidia closing down 3.9% to
+// $149.30 (verified close, not the $142.90 intraday low) as Wall
+// Street stages a Wednesday comeback, with U.S. GDP revised to
+// +4.3% — plus ten medium cards (2 tankers hit by mines in
+// Hormuz, Houthi strike on the Ras Tanura refinery, Solomon
+// Islands–Australia security pact, all Cartagena hostages freed,
+// first Pakistani in orbit, Bangladesh garment wage +36%, U.S.
+// tariffs on 14 partners, Australia CPI +4.9%, Huang returns to
+// Nvidia, Champions League Matchday 5), a UTC timeline strip,
+// a world map with 13 numbered pins, 22 more dated briefs, a
+// DATE CHECK footer, and a HOW SURE verification legend
+// (OFFICIAL / CONFIRMED / REPORTED / CLAIM).
+// Sources: Reuters, BBC, Mediazona, WSJ, NY Post, NWS/NOAA,
+// Xinhua, USTR, ABS/RBA, DOJ, CGTN/WHO, BEA, Finnhub, UEFA.
 //
 // The page was rendered ahead of time with Python + Pillow (flat
-// colours, simple pictograms, DejaVu type) into entry.png, which sits
-// next to this file. This program has one job only: place an exact
-// copy of that image at $MAKEFUN_OUTPUT_DIR/entry.png (default
-// /output/entry.png) and prove the copy is intact. It needs no
-// network and takes no arguments.
+// colours, simple pictograms, DejaVu type) into entry.png, which
+// sits next to this file. This program has one job only: place an
+// exact copy of that image at $MAKEFUN_OUTPUT_DIR/entry.png
+// (default /output/entry.png) and prove the copy is intact. It
+// needs no network and takes no arguments.
 //
 // Local check:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
@@ -40,45 +41,59 @@ import { fileURLToPath } from "node:url";
 
 const MAX_BYTES = 1024 * 1024; // the rules cap the image at 1 MiB
 const PNG_MAGIC = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
-
-const destDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
-const here = dirname(fileURLToPath(import.meta.url));
-const bundled = join(here, "entry.png");
-const target = join(destDir, "entry.png");
+const EXPECTED_WIDTH = 1024;
+const EXPECTED_HEIGHT = 1024;
+const ENTRY_FILENAME = "entry.png";
 
 function digest(bytes) {
   return createHash("sha256").update(bytes).digest("hex");
 }
 
-// The bundled image must exist, be a genuine PNG, and fit the size
-// cap — verify all three before writing anything to the output dir.
-const info = statSync(bundled, { throwIfNoEntry: false });
-if (info === undefined) {
-  throw new Error(`bundled entry.png is missing: ${bundled}`);
-}
-if (info.size > MAX_BYTES) {
-  throw new Error(`entry.png is ${info.size} bytes, over the 1 MiB limit`);
-}
-const image = readFileSync(bundled);
-if (!image.subarray(0, PNG_MAGIC.length).equals(PNG_MAGIC)) {
-  throw new Error("entry.png does not start with the PNG magic bytes");
-}
-// The PNG header (IHDR) stores the pixel dimensions at fixed offsets;
-// this entry must be exactly 1024x1024, so check both numbers.
-const [picWidth, picHeight] = [image.readUInt32BE(16), image.readUInt32BE(20)];
-if (picWidth !== 1024 || picHeight !== 1024) {
-  throw new Error(`entry.png is ${picWidth}x${picHeight}, expected 1024x1024`);
+function readBundledImage(path) {
+  // The bundled image must exist, be a genuine PNG, and fit the size
+  // cap — verify all three before writing anything to the output dir.
+  const info = statSync(path, { throwIfNoEntry: false });
+  if (info === undefined) {
+    throw new Error(`bundled entry.png is missing: ${path}`);
+  }
+  if (info.size > MAX_BYTES) {
+    throw new Error(`entry.png is ${info.size} bytes, over the 1 MiB limit`);
+  }
+  const bytes = readFileSync(path);
+  if (!bytes.subarray(0, PNG_MAGIC.length).equals(PNG_MAGIC)) {
+    throw new Error("entry.png does not start with the PNG magic bytes");
+  }
+  // The PNG header (IHDR) stores the pixel dimensions at fixed offsets;
+  // this entry must be exactly 1024x1024, so check both numbers.
+  const [picWidth, picHeight] = [bytes.readUInt32BE(16), bytes.readUInt32BE(20)];
+  if (picWidth !== EXPECTED_WIDTH || picHeight !== EXPECTED_HEIGHT) {
+    throw new Error(
+      `entry.png is ${picWidth}x${picHeight}, expected ${EXPECTED_WIDTH}x${EXPECTED_HEIGHT}`,
+    );
+  }
+  return bytes;
 }
 
-mkdirSync(destDir, { recursive: true });
-copyFileSync(bundled, target);
+function main() {
+  const destDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+  const here = dirname(fileURLToPath(import.meta.url));
+  const bundled = join(here, ENTRY_FILENAME);
+  const target = join(destDir, ENTRY_FILENAME);
 
-// Read the copy back and compare it byte for byte: a truncated or
-// corrupted write must fail loudly instead of grading a broken image.
-const delivered = readFileSync(target);
-if (!delivered.equals(image)) {
-  throw new Error("output entry.png differs from the bundled entry.png");
+  const image = readBundledImage(bundled);
+
+  mkdirSync(destDir, { recursive: true });
+  copyFileSync(bundled, target);
+
+  // Read the copy back and compare it byte for byte: a truncated or
+  // corrupted write must fail loudly instead of grading a broken image.
+  const delivered = readFileSync(target);
+  if (!delivered.equals(image)) {
+    throw new Error("output entry.png differs from the bundled entry.png");
+  }
+  console.log(
+    `wrote ${target} (${delivered.length} bytes, sha256=${digest(delivered)}, verified identical)`,
+  );
 }
-console.log(
-  `wrote ${target} (${delivered.length} bytes, sha256=${digest(delivered)}, verified identical)`,
-);
+
+main();

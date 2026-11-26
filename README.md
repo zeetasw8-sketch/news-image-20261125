@@ -2,70 +2,34 @@
 [![rank](https://make.fun/badge/news-image-20261125/zeetasw8-sketch/news-image-20261125/rank.svg)](https://make.fun/bounty/news-image-20261125/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
 [![reward](https://make.fun/badge/news-image-20261125/zeetasw8-sketch/news-image-20261125/reward.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
 
-# The World Today — 25 November 2026 in one image (v1)
+# The World Today — 25 November 2026 in one image (v2)
 
 Entry for make.fun competition `news-image-20261125` ($100).
 One 1024×1024 PNG that sums up Wednesday 25 November 2026's world
-news — a navy broadsheet masthead, one dominant hero, four big cards,
-and an "ALSO TODAY" ticker with six more stories — 11 stories in
-total. Benchmark is news-image-20261124 v1 (SCORED round 1, 62.8%
-win rate, rank 988/7,302; round 2 0.633, rank 1,173/9,063). This v1
-is honestly better: a brand-new hero (the Nvidia reversal — Huang's
-comeback fading, verified Tuesday close −7.5% — v1 yesterday had the
-comeback itself, +31.5%), 8 of 11 items new or fully changed vs
-yesterday, and all U.S. market numbers are verified NYSE closes,
-not premarket.
+news — a navy broadsheet masthead, 3 heroes, 10 medium cards, a UTC
+timeline, a world map with 13 numbered pins, and 22 more dated briefs
+— 35 stories in total, each dated and labelled OFFICIAL / CONFIRMED /
+REPORTED / CLAIM, plus a DATE CHECK footer. Benchmark is the news-23
+winner regian (35 dated stories + Date-Check Audit, $20). v2 replaces
+v1 (11 stories): density tripled, and the Nvidia close is corrected
+to the verified $149.30 (−3.91%) — the $142.90/−8.03% in v1's research
+was the intraday low, not the close.
 
-## The 11 stories
+## The 35 stories
 
-### Hero — Huang's Comeback Fades: Nvidia −7%
-Nvidia shares fall 7.5% to $152.76 on Tuesday's close — Monday's
-+31.5% comeback is fading fast. Shares sit 18% below their 6
-November close; the Nikkei drops 2.8% as AI-doubt spreads.
-Lawmakers probe Trump's role in reinstating CEO Jensen Huang, who
-is due to testify before the Senate Banking Committee on 3 December.
-Sources: Reuters, BBC, Barron's, 25 Nov 2026.
+### Heroes
+- **Russia: 490,334 troops dead** (Feb 2022–Sep 2026; >700,000 incl. missing) — leaked Rosstat data via BBC Russian / Mediazona. CONFIRMED, 24–25 Nov.
+- **Macy's 100th Parade POSTPONED to Sat 28 Nov** — first postponement in 100 years; nor'easter gusts up to 65 mph; New Jersey emergency, 21 counties. OFFICIAL, 25 Nov.
+- **Nvidia −3.9% to $149.30** (verified close; $142.90 was intraday) — Wall Street comeback; Dow +0.33%, Nasdaq −0.62%; U.S. GDP +4.3%, core PCE +3.3%. CONFIRMED / OFFICIAL, 25 Nov.
 
-### Card 1 — Iran War Widens: Riyadh Hit
-Trump says the Iran war is "funded" into January. A Houthi drone
-hits a tower in Riyadh's financial district, injuring 11, including
-two Indians. The Houthis threaten Red Sea ports.
-Sources: Reuters, The Guardian, 25 Nov 2026.
+### 10 medium cards
+Hormuz: 2 tankers hit by mines (IRGC claim) · Houthi hit Ras Tanura refinery (550,000 bbl/day) · Solomon Islands–Australia security pact (no foreign base) · All Cartagena hostages freed · First Pakistani in orbit (Shenzhou-24) · Bangladesh garment wage +36% (17,000 taka) · U.S. tariffs on 14 partners · Australia CPI +4.9% · Huang returns to Nvidia · Champions League Matchday 5 (Barça 4–1, Liverpool 3–0).
 
-### Card 2 — Huawei Guilty on 10 of 12 Counts
-A Brooklyn jury finds Huawei guilty on 10 of 12 counts — bank fraud,
-wire fraud, sanctions breaches over Iran, conspiring to steal trade
-secrets, and money-laundering conspiracy — and clears it of
-racketeering. The case dates to 2018; sentencing is set for
-14 September 2027.
-Sources: Reuters, U.S. DOJ, The Register, 24 Nov 2026.
+### 22 more dated briefs (numbered 11–32 in the image)
+RSF strikes in Sudan (19 dead) · Hamas colonel killed in Gaza · Odesa strike (2 dead) · Libya vows revenge for Merkury hit · ~60 Patriot missiles delayed · N0n claims Next · Ahmadi flogged 74 lashes · Huawei guilty 10/12 · Shanghai party chief probed · Venezuela $237.5bn debt · Cessna crash (6 dead) · CIA/ODNI OSINT hacked · Microsoft "Code Red" · Ebola 11,042 cases · Senegal boat (35–39 dead) · ANC 30.76% · Uganda gold $8.9bn · DR Congo cobalt halt · Pete Edochie dies, 79 · Indian banks write off ₹1.44 lakh crore · IPL 1,220 players · Sooryavanshi 204 off 53 balls.
 
-### Card 3 — U.K. Sanctions 5 Myanmar Generals
-Britain sanctions five senior Myanmar generals and curbs aviation
-fuel after the ICJ's genocide ruling of 19 November — the first
-time a state has been held directly responsible for genocide.
-Malaysia will repatriate 6,803 of its citizens.
-Sources: ICJ.org, BBC, Atlantic Council, 25 Nov 2026.
-
-### Card 4 — War Spreads: Libya Hit After Merkury
-Two Libyan soldiers die of wounds after the strike on a Russian ship
-Kyiv claims. The war now reaches beyond Europe; GPS jamming disrupts
-Baltic air and sea traffic; the "shadow fleet" drones on.
-Sources: Paris Times, The Times, WSJ, 25 Nov 2026.
-
-### Also today
-- Pakistan: the first Pakistani astronaut docks at China's Tiangong
-  station — the first foreigner aboard (Shenzhou-24, 25 Nov 2026).
-- Colombia: some 20 hostages held in a Cartagena supermarket; a car
-  bomb injures 23 (25 Nov 2026).
-- Trade: the U.S. readies new tariffs on 16 trading partners
-  (25 Nov 2026).
-- Football: Senegal keep their AFCON title after a CAS ruling
-  (25 Nov 2026).
-- Climate: COP31 fallout continues after the Antalya collapse — no
-  pact, no deal (25 Nov 2026).
-- Oil: oil down 21% across November as demand fears grow
-  (25 Nov 2026).
+### DATE CHECK — excluded
+Kraków shooting was 7 Nov (not 25) · Novaya Gazeta closed 9 Nov (not 25) · ICJ Myanmar ruling was 19 Nov · Microsoft outage was 12–13 Nov · Nvidia $142.90/−8% was intraday — close was $149.30/−3.9% · No Nvidia price 26 Nov — U.S. markets closed (Thanksgiving).
 
 ## Render locally
 
